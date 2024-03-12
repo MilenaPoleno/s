@@ -1,0 +1,20 @@
+{
+    "builds": [
+      {
+        "src": "ach",
+        "use": "@vercel/static",
+        "config": {
+          "target": "serverless",
+          "framework": "static",
+          "nodeVersion": "18",
+          "buildOutputDirectory": "dist",
+          "env": {
+            "NODE_ENV": "production"
+          },
+          "customCommands": {
+            "postBuild": "npm run build"
+          }
+        }
+      }
+    ]
+  }

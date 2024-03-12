@@ -24,37 +24,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            var coinGame = $("#game");
-            var coins = $("<div class='coin'></div>");
     
-            function addCoin() {
-                coins.appendTo(coinGame);
-            }
-    
-            function moveCoin() {
-                coins.each(function() {
-                    var coin = $(this);
-                    coin.animate({
-                        left: Math.random() * ($(window).width() - coin.outerWidth()) + "px",
-                        top: Math.random() * ($(window).height() - coin.outerHeight()) + "px"
-                    });
-                });
-            }
-    
-            function collectCoin() {
-                coins.click(function() {
-                    $(this).remove();
-                });
-            }
-    
-            addCoin();
-            moveCoin();
-            collectCoin();
-            setInterval(moveCoin, 2000);
-        });
-    </script>
 </head>
 <body>
     <header class="site-header">
@@ -93,9 +63,9 @@
                                 <i class="fa fa-bars"></i>
                             </a>
                             <ul class="menu">
-                                <li><a href="index.html">Каталог</a></li>
-                                <li><a href="cart.html" class="add-to-cart">Корзина <span class="counter">0</span></a></li>                                
-                                <li><a href="product-detail.html">О нас</a></li>
+                                <li><a href="delivery.html">Доствка</a></li>
+                                <li><a href="payment.html">Оплата</a></li>
+                                <li><a href="catalog.html">Каталог</a></li>
                             </ul>
                         </div> <!-- /.main-menu -->
                     </div> <!-- /.col-md-8 -->
@@ -108,9 +78,10 @@
                     <div class="col-md-6 col-sm-7">
                         <div class="list-menu">
                             <ul>
-                                <li><a href="index.html">Каталог</a></li>
+                                <li><a href="catalog.html">Каталог</a></li>
                                 <li><a href="product-detail.html">О нас</a></li>
                                 <li><a href="contact.html">Контакты</a></li>
+                                <li><a href="cart.html" class="add-to-cart">Корзина <span class="counter">0</span></a></li>                                
                             </ul>
                         </div> <!-- /.list-menu -->
                     </div> <!-- /.col-md-6 -->
@@ -140,10 +111,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="customNavigation">
-                            <a class="btn prev"><i class="fa fa-angle-left"></i></a>
-                            <a class="btn next"><i class="fa fa-angle-right"></i></a>
+                            <!-- <a class="btn prev"><i class="fa fa-angle-left"></i></a>
+                            <a class="btn next"><i class="fa fa-angle-right"></i></a> -->
                         </div>
-                        <div id="owl-demo" class="owl-carousel">
+                        <!-- <div id="owl-demo" class="owl-carousel">
                             <div class="item"> 
                                 <a href="#"><img src="images/tm-170x80-1.jpg" alt=""></a>
                                 </div>
@@ -174,7 +145,7 @@
                             <div class="item">
                                 <a href="#"><img src="images/tm-170x80-2.jpg" alt=""></a>
                             </div>
-                        </div> <!-- /#owl-demo -->
+                        </div> /#owl-demo -->
                     </div> <!-- /.col-md-12 -->
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
@@ -184,13 +155,10 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="footer-widget">
-                            <h3 class="widget-title">
-                                <!-- О нас</h3> -->
-                            <!-- Мы - маленький семейный интернет-магазин. Отбираем для Вас самое лучшее, сделанное лучшими мастерами из приятнейших экологически чистых материалов. Хотим, чтобы у каждого дома было уютно.  -->
                             <ul class="follow-us">
-                                <li><a href="https://vk.com//"><i class="fa fa-vk"></i>Вконтакте</a></li>
-                                <li><a href="https://www.youtube.com/"><i class="fa fa-youtube"></i>YouTube</a></li>
-                            </ul> <!-- /.follow-us -->
+                            <li><a href="https://vk.com//"><i class="fa fa-vk"></i>Вконтакте</a></li>
+                            <li><a href="https://www.youtube.com/"><i class="fa fa-youtube"></i>YouTube</a></li>
+                        </ul> <!-- /.follow-us -->
                         </div> <!-- /.footer-widget -->
                     </div> <!-- /.col-md-3 -->
                     <div class="col-md-3">
@@ -236,5 +204,39 @@
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </div> <!-- /.bottom-footer -->
-    </footer> <!-- /.site-footer --></body>
+    </footer> <!-- /.site-footer -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            var coinGame = $("#game");
+            var coins = $("<div class='coin'></div>");
+    
+            function addCoin() {
+                coins.appendTo(coinGame);
+            }
+    
+            function moveCoin() {
+                coins.each(function() {
+                    var coin = $(this);
+                    coin.animate({
+                        left: Math.random() * ($(window).width() - coin.outerWidth()) + "px",
+                        top: Math.random() * ($(window).height() - coin.outerHeight()) + "px"
+                    });
+                });
+            }
+    
+            function collectCoin() {
+                coins.click(function() {
+                    $(this).remove();
+                });
+            }
+    
+            addCoin();
+            moveCoin();
+            collectCoin();
+            setInterval(moveCoin, 2000);
+        });
+    </script>
+</body>
 </html>
