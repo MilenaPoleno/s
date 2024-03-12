@@ -233,14 +233,14 @@ $(document).ready(function() {
     // код для обновления корзины на странице
 });
 
-$('.add-to-cart-btn').click(function() {
+$('.add-to-cart').click(function() {
     // Добавление продукта в корзину
     alert('В корзине');
 });
 
 let counter = 0;
 
-document.querySelector('.add-to-cart-btn').addEventListener('click', function(e) {
+document.querySelector('.add-to-cart').addEventListener('click', function(e) {
   e.preventDefault();
   counter++;
   document.querySelector('.counter').innerHTML = counter;
@@ -267,7 +267,7 @@ function updateCartCounter() {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-	const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+	const addToCartButtons = document.querySelectorAll('.add-to-cart');
 	addToCartButtons.forEach(button => {
 	  button.addEventListener('click', (event) => {
 		event.preventDefault();
@@ -304,3 +304,14 @@ function updateCartCounter() {
 	clearCart();
 	updateCartCounter();
   });
+
+  function updateCart() {
+    // Здесь вам нужно будет заменить URL на ваш
+    var cartUrl = '/cart';
+    fetch(cartUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Обработайте данные корзины и обновите соответствующие элементы на странице
+        console.log('Корзина обновлена:', data);
+      });
+  }
